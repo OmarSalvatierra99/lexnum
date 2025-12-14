@@ -1,75 +1,78 @@
-# ========================================
-# PYTHON / FLASK PROJECT IGNORE FILE
-# ========================================
-
-# Bytecode
+# Byte-compiled / cache
 __pycache__/
 *.py[cod]
 *$py.class
 
+# AI agent files
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursorrules
+.cursor/
+.aider*
+
 # Virtual environment
 venv/
-env/
+.env/
+.env.bak/
 .venv/
+env/
 
-# Flask instance and databases
+# Flask cache and instance data
 instance/
 *.db
-*.sqlite
 *.sqlite3
+*.sqlite
+*.log
+*.pid
+*.swp
 
 # Environment variables
-.env
-.env.local
-.env.*.local
 *.env
+.env.*
 !.env.example
 
-# Logs
-*.log
-*.out
-*.err
-
-# Cache and compiled files
-*.cache
-*.pid
-*.bak
-*.swp
-*.tmp
-*.temp
-.cache/
-.pytest_cache/
-.coverage
-htmlcov/
-
-# OS / IDE files
+# OS junk
 .DS_Store
 Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
 .vscode/
 .idea/
 *.iml
+*.sublime-project
+*.sublime-workspace
 
-# Uploads and generated files
-uploads/
-*.xlsx
-*.xls
-*.csv
-*.zip
-*.pdf
-
-# Node/npm (if frontend tools are added)
-node_modules/
-package-lock.json
-
-# Build artifacts
-dist/
+# Python packaging
 build/
-__pypackages__/
-.eggs/
+dist/
 *.egg-info/
-*.egg
 
-# Backup or generated HTML/CSS/JS
-*.min.js
-*.min.css
+# Backup files
+*~
+*.bak
 
+# Temporary files
+/tmp/
+temp/
+*.tmp
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+gunicorn.log
+*.log.*
+logs/
+
+# System files
+*.sock
+*.pid
+
+# Cache or compiled static assets
+static/css/*.map
+static/js/*.map

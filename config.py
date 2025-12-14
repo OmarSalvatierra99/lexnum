@@ -28,7 +28,7 @@ class Config:
 
     # Servidor
     HOST = os.getenv("FLASK_HOST", "0.0.0.0")
-    PORT = int(os.getenv("FLASK_PORT", "4055"))
+    PORT = int(os.getenv("FLASK_PORT", "5005"))
     DEBUG = os.getenv("FLASK_DEBUG", "False").lower() in ("true", "1", "yes")
 
     # Archivos permitidos
