@@ -46,8 +46,12 @@ class Config:
     ERROR_NETWORK = "Error de conexión."
 
     # Configuración de logging
+    LOG_DIR = BASE_DIR / 'log'
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
     LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    LOG_FILE = LOG_DIR / 'lexnum.log'
+    LOG_MAX_BYTES = 10 * 1024 * 1024  # 10MB
+    LOG_BACKUP_COUNT = 5
 
 
 # =========================================================

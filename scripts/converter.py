@@ -1,9 +1,8 @@
 """
-LexNum - Utilidades para conversión numérica a texto monetario
-================================================================
+LexNum - Number to Text Conversion
+===================================
 
-Este módulo contiene funciones de utilidad para convertir números
-a su representación en texto en formato monetario mexicano oficial.
+Functions for converting numbers to monetary text format.
 
 Autor: Omar Gabriel Salvatierra Garcia
 Organización: Órgano de Fiscalización Superior del Estado de Tlaxcala
@@ -13,72 +12,15 @@ import re
 import unicodedata
 from typing import Optional, Any
 
-import pandas as pd
 from num2words import num2words
 
 
 # =========================================================
 # CONSTANTES
 # =========================================================
-COLUMN_ALIASES = frozenset({"numero", "num"})
 CURRENCY_SYMBOLS = ("$", "MXN", "M.N.", "MN", ",")
 DECIMAL_PRECISION = 100
 CURRENCY_SUFFIX = "M.N."
-
-
-# =========================================================
-# FUNCIONES DE NORMALIZACIÓN
-# =========================================================
-def normalize(text: Any) -> str:
-    """
-    Normaliza texto eliminando acentos, espacios y convirtiendo a minúsculas.
-
-    Args:
-        text: Texto a normalizar (cualquier tipo, se convertirá a string)
-
-    Returns:
-        str: Texto normalizado en minúsculas sin acentos ni espacios
-
-    Example:
-        >>> normalize("Número")
-        'numero'
-        >>> normalize("  Num  ")
-        'num'
-    """
-    text_str = str(text)
-    # Normalizar caracteres Unicode (remover acentos)
-    normalized = unicodedata.normalize("NFKD", text_str)
-    # Filtrar caracteres combinantes (acentos)
-    without_accents = "".join(
-        char for char in normalized
-        if not unicodedata.combining(char)
-    )
-    # Remover espacios y convertir a minúsculas
-    return re.sub(r"\s+", "", without_accents).lower()
-
-
-def find_num_column(df: pd.DataFrame) -> Optional[str]:
-    """
-    Encuentra la columna de números en un DataFrame de pandas.
-
-    Busca columnas con nombres que coincidan con variaciones de
-    'Número' o 'Num' (insensible a acentos, mayúsculas y espacios).
-
-    Args:
-        df: DataFrame de pandas donde buscar la columna
-
-    Returns:
-        str | None: Nombre exacto de la columna encontrada, o None si no existe
-
-    Example:
-        >>> df = pd.DataFrame({"Número": [1, 2, 3]})
-        >>> find_num_column(df)
-        'Número'
-    """
-    for column in df.columns:
-        if normalize(column) in COLUMN_ALIASES:
-            return column
-    return None
 
 
 # =========================================================
@@ -185,6 +127,4 @@ def numero_a_texto(valor: Any) -> str:
 
     except (ValueError, TypeError, AttributeError) as e:
         # En caso de error, retornar string vacío
-        # (se podría hacer logging aquí si se implementa)
         return ""
-
