@@ -1,19 +1,18 @@
-# LexNum — Institutional Numeric Converter
+# LexNum — Official Amounts in Words
 
-LexNum is a minimal, reliable web tool built for the **Superior Audit Office of Tlaxcala (OFS)** to convert numeric values into their official Spanish currency representation, individually or in bulk from Excel files. It ensures standardized financial text for institutional use.
+LexNum converts numeric amounts into official Spanish money text for institutional documents.
+LexNum convierte montos numericos a texto oficial en espanol para documentos institucionales.
 
-🔗 **Live:** [https://lexnum.omar-xyz.shop](https://lexnum.omar-xyz.shop)
-
----
-
-## Features
-- Real-time numeric-to-text conversion (e.g., `1523.45` → `MIL QUINIENTOS VEINTITRÉS PESOS 45/100 M.N.`)
-- Excel batch conversion with automatic column detection (`Número`, `Numero`, `Num`)
-- Simple, responsive interface using pure HTML, CSS, and JavaScript
-- Backend built with Flask, Pandas, and OpenPyXL
+🔗 **Live / En vivo:** https://lexnum.omar-xyz.shop
+🌐 **Language / Idioma:** English / Espanol
 
 ---
 
+## Highlights / Lo mas importante
+- Convert single amounts instantly / Convertir montos individuales al instante
+- Process many values at once / Procesar muchos valores a la vez
+- Copy or download results / Copiar o descargar resultados
 
-© 2025 **Omar Gabriel Salvatierra Garcia** — Institutional Software, OFS Tlaxcala
+---
 
+© 2026 Omar Gabriel Salvatierra Garcia

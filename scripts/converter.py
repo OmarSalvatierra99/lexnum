@@ -120,10 +120,10 @@ def numero_a_texto(valor: Any) -> str:
 
         # Caso especial: un peso
         if parte_entera == 1:
-            return f"UN PESO {sufijo_centavos}"
+            return f"(UN PESO {sufijo_centavos})"
 
         # Caso general: múltiples pesos o cero
-        return f"{texto_numero} PESOS {sufijo_centavos}"
+        return f"({texto_numero} PESOS {sufijo_centavos})"
 
     except (ValueError, TypeError, AttributeError) as e:
         # En caso de error, retornar string vacío
